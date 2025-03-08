@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
+  <style>
+    .primary { fill: #4361ee; }
+    .secondary { fill: #3a0ca3; }
+    .accent { fill: #4cc9f0; }
+    .light { fill: #f5f7fa; }
+    .dark { fill: #333333; }
+    .skin1 { fill: #ffb6b9; }
+    .skin2 { fill: #ffd1bd; }
+    .hair1 { fill: #6c5b7b; }
+    .hair2 { fill: #355c7d; }
+    .clothes1 { fill: #c06c84; }
+    .clothes2 { fill: #6c5b7b; }
+    .clothes3 { fill: #355c7d; }
+  </style>
+  
+  <!-- Background Elements -->
+  <circle cx="300" cy="200" r="180" class="light" opacity="0.3"/>
+  
+  <!-- Person 1 (Left) -->
+  <circle cx="180" cy="180" r="50" class="skin1"/>
+  <path d="M150 150C150 150 140 130 160 120C180 110 200 120 200 120" class="hair1"/>
+  <circle cx="160" cy="170" r="5" class="dark"/>
+  <circle cx="200" cy="170" r="5" class="dark"/>
+  <path d="M170 190C170 190 180 200 190 190" class="dark"/>
+  <rect x="150" y="230" width="60" height="80" rx="10" class="clothes1"/>
+  
+  <!-- Person 2 (Middle) -->
+  <circle cx="300" cy="160" r="50" class="skin2"/>
+  <path d="M270 130C270 130 260 110 280 100C300 90 320 100 320 100" class="hair2"/>
+  <circle cx="280" cy="150" r="5" class="dark"/>
+  <circle cx="320" cy="150" r="5" class="dark"/>
+  <path d="M290 170C290 170 300 180 310 170" class="dark"/>
+  <rect x="270" y="210" width="60" height="80" rx="10" class="clothes2"/>
+  
+  <!-- Person 3 (Right) -->
+  <circle cx="420" cy="180" r="50" class="skin1"/>
+  <path d="M390 150C390 150 380 130 400 120C420 110 440 120 440 120" class="hair1"/>
+  <circle cx="400" cy="170" r="5" class="dark"/>
+  <circle cx="440" cy="170" r="5" class="dark"/>
+  <path d="M410 190C410 190 420 200 430 190" class="dark"/>
+  <rect x="390" y="230" width="60" height="80" rx="10" class="clothes3"/>
+  
+  <!-- Connection Lines -->
+  <line x1="210" y1="270" x2="270" y2="250" stroke="#4361ee" stroke-width="3" stroke-dasharray="5,5"/>
+  <line x1="330" y1="250" x2="390" y2="270" stroke="#4361ee" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="240" cy="260" r="10" class="primary"/>
+  <circle cx="360" cy="260" r="10" class="primary"/>
+  
+  <!-- Trio Text -->
+  <text x="250" y="350" font-family="Arial" font-size="24" font-weight="bold" class="primary">TRIO</text>
+  <text x="320" y="350" font-family="Arial" font-size="24" font-weight="bold" class="accent">CRAFT</text>
+  
+  <!-- Small Decorative Elements -->
+  <circle cx="100" cy="100" r="15" class="accent" opacity="0.5"/>
+  <circle cx="500" cy="100" r="20" class="primary" opacity="0.5"/>
+  <circle cx="100" cy="300" r="25" class="secondary" opacity="0.5"/>
+  <circle cx="500" cy="300" r="15" class="accent" opacity="0.5"/>
+</svg> 

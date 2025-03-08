@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrioCraft - Web Development & UI/UX Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Trio<span>Craft</span></h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Crafting Digital Excellence</h1>
+                <h2>Frontend • Backend • UI/UX</h2>
+                <p>We transform your ideas into exceptional digital experiences with our expert development and design
+                    services.</p>
+                <div class="cta-buttons">
+                    <a href="#services" class="btn btn-primary">Our Services</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-image.svg" alt="Web Development Illustration">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions for your digital needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                    <p>Responsive, interactive, and user-friendly interfaces built with modern technologies.</p>
+                    <ul>
+                        <li>HTML5, CSS3, JavaScript</li>
+                        <li>React, Vue, Angular</li>
+                        <li>Responsive Design</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Robust and scalable server-side solutions to power your applications.</p>
+                    <ul>
+                        <li>Node.js, Python, PHP</li>
+                        <li>RESTful APIs</li>
+                        <li>Database Design</li>
+                        <li>Cloud Integration</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Beautiful, intuitive designs that enhance user experience and engagement.</p>
+                    <ul>
+                        <li>User Research</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Visual Design</li>
+                        <li>Usability Testing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About TrioCraft</h2>
+                <p>Who we are and what drives us</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/about-image.svg" alt="Team Collaboration">
+                </div>
+                <div class="about-text">
+                    <h3>Your Vision, Our Expertise</h3>
+                    <p>At TrioCraft, we're a passionate team of developers and designers dedicated to creating
+                        exceptional digital experiences. We combine technical expertise with creative thinking to
+                        deliver solutions that not only meet but exceed expectations.</p>
+                    <p>Founded on the principles of quality, innovation, and client satisfaction, we work closely with
+                        you to understand your unique needs and transform your ideas into reality.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h4>50+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h4>30+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat">
+                            <h4>5+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Portfolio</h2>
+                <p>Some of our best work</p>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="uiux">UI/UX</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="frontend uiux">
+                    <img src="images/portfolio-1.jpg" alt="E-commerce Website">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Platform</h3>
+                        <p>Frontend Development, UI/UX Design</p>
+                        <a href="#" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="backend">
+                    <img src="images/portfolio-2.jpg" alt="Booking System">
+                    <div class="portfolio-overlay">
+                        <h3>Booking System API</h3>
+                        <p>Backend Development</p>
+                        <a href="#" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="uiux">
+                    <img src="images/portfolio-3.jpg" alt="Mobile App Design">
+                    <div class="portfolio-overlay">
+                        <h3>Fitness App Design</h3>
+                        <p>UI/UX Design</p>
+                        <a href="#" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="frontend backend">
+                    <img src="images/portfolio-4.jpg" alt="Dashboard">
+                    <div class="portfolio-overlay">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Frontend & Backend Development</p>
+                        <a href="#" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="uiux frontend">
+                    <img src="images/portfolio-5.jpg" alt="Restaurant Website">
+                    <div class="portfolio-overlay">
+                        <h3>Restaurant Website</h3>
+                        <p>UI/UX Design, Frontend Development</p>
+                        <a href="#" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="backend">
+                    <img src="images/portfolio-6.jpg" alt="CRM System">
+                    <div class="portfolio-overlay">
+                        <h3>CRM System</h3>
+                        <p>Backend Development</p>
+                        <a href="#" class="btn btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Let's discuss your project</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@triocraft.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>123 Tech Street, Digital City</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Trio<span>Craft</span></h2>
+                    <p>Crafting digital excellence through innovative solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Frontend Development</a></li>
+                        <li><a href="#services">Backend Development</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">Web Applications</a></li>
+                        <li><a href="#services">Mobile Applications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates.</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> TrioCraft. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
