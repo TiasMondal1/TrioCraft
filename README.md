@@ -9,6 +9,10 @@ A responsive website for TrioCraft, a freelancing company offering Frontend, Bac
 - Dynamic copyright year in the footer
 - Smooth scrolling navigation
 - Portfolio filtering
+- Testimonial slider with auto-play
+- Process timeline
+- Technologies showcase
+- Call-to-action section
 - Contact form
 - Newsletter subscription
 - Modern and clean UI

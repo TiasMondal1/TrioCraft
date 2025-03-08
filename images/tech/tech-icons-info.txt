@@ -1,0 +1,36 @@
+Technology Icons Information
+
+For a real implementation, you would need to replace the placeholder references with actual SVG icons for each technology.
+
+Recommended icons to include:
+
+Frontend:
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Vue.js
+- Angular
+
+Backend:
+- Node.js
+- Python
+- PHP
+- MongoDB
+- MySQL
+- Firebase
+
+Tools & Platforms:
+- Git
+- Figma
+- AWS
+- Docker
+- WordPress
+- Shopify
+
+You can find free SVG icons for these technologies on websites like:
+- https://simpleicons.org/
+- https://devicon.dev/
+- https://worldvectorlogo.com/
+
+Each icon should be saved as an SVG file in this directory with the appropriate name (e.g., html5.svg, react.svg, etc.). 

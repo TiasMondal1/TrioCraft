@@ -200,6 +200,96 @@ window.addEventListener('load', revealOnScroll);
 // Add revealed class to elements as they enter the viewport on scroll
 window.addEventListener('scroll', revealOnScroll);
 
+// Testimonial Slider
+const testimonialSlider = document.querySelector('.testimonial-slider');
+const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+const dots = document.querySelectorAll('.dot');
+let currentSlide = 0;
+let slideInterval;
+
+// Initialize testimonial slider
+const initTestimonialSlider = () => {
+    // Set initial position
+    updateSliderPosition();
+    
+    // Start auto-sliding
+    startSlideInterval();
+    
+    // Add event listeners to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide = index;
+            updateSliderPosition();
+            resetSlideInterval();
+        });
+    });
+    
+    // Pause auto-sliding when hovering over slider
+    testimonialSlider.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+    
+    // Resume auto-sliding when mouse leaves slider
+    testimonialSlider.addEventListener('mouseleave', () => {
+        startSlideInterval();
+    });
+    
+    // Add touch support for mobile
+    let startX, endX;
+    testimonialSlider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    testimonialSlider.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        
+        if (startX - endX > 50) { // Swipe left
+            nextSlide();
+        } else if (endX - startX > 50) { // Swipe right
+            prevSlide();
+        }
+    });
+};
+
+// Update slider position
+const updateSliderPosition = () => {
+    // Update slider transform
+    testimonialSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update active dot
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+};
+
+// Go to next slide
+const nextSlide = () => {
+    currentSlide = (currentSlide + 1) % testimonialSlides.length;
+    updateSliderPosition();
+};
+
+// Go to previous slide
+const prevSlide = () => {
+    currentSlide = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
+    updateSliderPosition();
+};
+
+// Start auto-sliding
+const startSlideInterval = () => {
+    slideInterval = setInterval(nextSlide, 5000);
+};
+
+// Reset slide interval
+const resetSlideInterval = () => {
+    clearInterval(slideInterval);
+    startSlideInterval();
+};
+
+// Initialize testimonial slider if it exists
+if (testimonialSlider && testimonialSlides.length > 0) {
+    initTestimonialSlider();
+}
+
 // Add CSS for reveal animations
 const style = document.createElement('style');
 style.textContent = `
