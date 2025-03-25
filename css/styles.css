@@ -309,6 +309,24 @@ nav {
     gap: var(--spacing-sm);
 }
 
+/* Hero services two-line layout */
+.hero-services {
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
 /* ===== SERVICES SECTION ===== */
 .services {
     background-color: var(--bg-color);
@@ -316,16 +334,24 @@ nav {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-md);
+}
+
+@media (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 .service-card {
     background-color: var(--bg-light);
     border-radius: 10px;
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -333,14 +359,14 @@ nav {
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .service-icon i {
@@ -349,12 +375,13 @@ nav {
 }
 
 .service-card h3 {
-    font-size: var(--fs-sm);
+    font-size: calc(var(--fs-sm) - 0.1rem);
     margin-bottom: var(--spacing-xs);
 }
 
 .service-card p {
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-xs);
     color: var(--text-light);
 }
 
@@ -366,6 +393,7 @@ nav {
     margin-bottom: 5px;
     position: relative;
     padding-left: 15px;
+    font-size: 1.3rem;
 }
 
 .service-card ul li::before {
@@ -804,15 +832,73 @@ nav {
 }
 
 .testimonial-slider {
-    display: flex;
-    overflow: hidden;
     position: relative;
-    z-index: 1;
+    margin-bottom: 30px;
+    overflow: hidden;
 }
 
 .testimonial-slide {
-    min-width: 100%;
-    transition: transform 0.5s ease;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.testimonial-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.testimonial-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+}
+
+.testimonial-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.prev-testimonial,
+.next-testimonial {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.prev-testimonial:hover,
+.next-testimonial:hover {
+    background-color: var(--secondary-color);
 }
 
 .testimonial-content {
@@ -882,27 +968,6 @@ nav {
     color: #ffc107;
     font-size: 1.6rem;
     margin-top: var(--spacing-sm);
-}
-
-.testimonial-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--spacing-md);
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--bg-dark);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.dot.active {
-    background-color: var(--primary-color);
-    transform: scale(1.2);
 }
 
 /* ===== CTA SECTION ===== */
@@ -1130,6 +1195,10 @@ footer {
     .hero {
         padding-top: 120px;
     }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1189,6 +1258,10 @@ footer {
         left: -10px !important;
         right: auto !important;
     }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 576px) {
@@ -1223,5 +1296,9 @@ footer {
     
     .process-icon i {
         font-size: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 } 
