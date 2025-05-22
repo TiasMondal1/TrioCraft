@@ -130,21 +130,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const scrollPosition = window.scrollY;
+    const headerHeight = document.querySelector('header').offsetHeight;
     
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+    // Get the home section (first section)
+    const homeSection = document.querySelector('.hero');
+    const homeLink = document.querySelector('a[href="#home"]');
+    
+    // Check if we're at the top of the page (home section)
+    if (scrollPosition < homeSection.offsetHeight - headerHeight) {
+        // Remove active class from all links
+        navLinksItems.forEach(link => link.classList.remove('active'));
+        // Add active class to home link
+        homeLink.classList.add('active');
+    } else {
+        // Remove active class from home link
+        homeLink.classList.remove('active');
         
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            navLinksItems.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
+        // Check other sections
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - headerHeight;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinksItems.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
 });
 
 // Form submission handling
@@ -179,17 +196,18 @@ if (newsletterForm) {
     });
 }
 
-// Reveal animations on scroll
-const revealElements = document.querySelectorAll('.service-card, .portfolio-item, .about-image, .about-text');
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.service-card, .process-step, .tech-category, .testimonial-content, .contact-form');
 
 const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
-    
+    const revealPoint = 150;
+
     revealElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
         
-        if (elementTop < windowHeight - 100) {
-            element.classList.add('revealed');
+        if (elementTop < windowHeight - revealPoint) {
+            element.classList.add('reveal', 'active');
         }
     });
 };
@@ -199,6 +217,26 @@ window.addEventListener('load', revealOnScroll);
 
 // Add revealed class to elements as they enter the viewport on scroll
 window.addEventListener('scroll', revealOnScroll);
+
+// Smooth scroll with offset for fixed header
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
 // Testimonial Slider Functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -285,4 +323,36 @@ style.textContent = `
         font-weight: 500;
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Floating elements parallax effect
+const floatingElements = document.querySelectorAll('.float-element');
+let mouseX = 0;
+let mouseY = 0;
+
+function handleMouseMove(e) {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+}
+
+function updateFloatingElements() {
+    floatingElements.forEach(element => {
+        const speed = parseFloat(element.getAttribute('data-speed'));
+        const x = mouseX * speed * 30;
+        const y = mouseY * speed * 30;
+        
+        element.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    
+    requestAnimationFrame(updateFloatingElements);
+}
+
+// Initialize floating elements
+window.addEventListener('mousemove', handleMouseMove);
+updateFloatingElements();
+
+// Reset floating elements position when mouse leaves window
+window.addEventListener('mouseleave', () => {
+    mouseX = 0;
+    mouseY = 0;
+}); 
